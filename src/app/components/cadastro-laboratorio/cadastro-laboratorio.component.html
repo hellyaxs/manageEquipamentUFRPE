@@ -1,1 +1,43 @@
-<p>cadastro-laboratorio works!</p>
+<div class="card w-100 my-5" >
+    <div class="card-body">
+        <h1 class="card-title text-center">Cadastro de Equipamento</h1>
+        <form action="">
+            <div class="row my-4">
+                <div class="col-6">
+                    <div class="form-floating mb-4 ">
+                        <input formControlName="nome" type="nome" class="form-control" placeholder="digite seu nome" id="nome">
+                        <label for="identification">Identificação</label>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-floating mb-4 ">
+                        <input formControlName="sobrenome" type="sobrenome" class="form-control" placeholder="digite seu sobrenome" id="sobrenome">
+                        <label for="location">Localização</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row my-4">
+                <div class="col-12">
+                    <div class="form-floating mb-4 ">
+                        <input formControlName="profissao" type="profissao" class="form-control" placeholder="Codigo Barras" id="profissao">
+                        <label for="code_bar">Capacidade</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row my-4">
+                <div>
+                    <div class="form-floating mb-4" style="height: 150px;">
+                        <input formControlName="profissao" type="profissao" class="form-control h-100" placeholder="Codigo Barras" id="profissao">
+                        <label for="description">Descrição</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row my-4">
+                <div class="form-group mt-4">
+                    <a type="button" class="btn btn-outline-danger float-start ">Cancelar</a>
+                    <a type="button" class="btn btn-outline-success float-end" >Enviar</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
