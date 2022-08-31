@@ -13,11 +13,11 @@ export class EquipamentoService {
  
   constructor(private http: HttpClient) { }
 
-  public postSalas(boydEquipamento:Equipamento):Observable<Equipamento> {
+  public postEquipamento(boydEquipamento:Equipamento):Observable<Equipamento> {
       return this.http.post<Equipamento>(url,boydEquipamento);
   }
 
-  public putSalas(id:number,boydEquipamento:Equipamento) {
+  public putEquipamento(id:number,boydEquipamento:Equipamento) {
     this.http.put<Equipamento>(url+id,boydEquipamento)
   }
 
@@ -25,11 +25,11 @@ export class EquipamentoService {
     this.http.delete<Equipamento>(url+id)
   }
 
-  public getSalasbyId(id:number): Observable<Equipamento> {
+  public getEquipamentobyId(id:number): Observable<Equipamento> {
     return this.http.get<Equipamento>(url+id);
   }
 
-  public getSalas():Observable<Equipamento> {
+  public getEquipamento():Observable<Equipamento> {
     return this.http.get<Equipamento>(url);
   }
 

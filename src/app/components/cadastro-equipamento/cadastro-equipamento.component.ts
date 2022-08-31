@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Equipamento } from 'src/app/interfaces/equipamento';
+import { EquipamentoService } from 'src/app/services/equipamento.service';
 
 @Component({
   selector: 'app-cadastro-equipamento',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadastroEquipamentoComponent implements OnInit {
 
-  constructor() { }
+  equipamento:Equipamento ={
+    id:"",
+    identificacao: '',
+    marca: "",
+    modelo: "",
+    descricao: "",
+    codigo: 0
+  };
+
+  constructor(private equipamentoService:EquipamentoService) { }
 
   ngOnInit(): void {
+    
+  }
+
+  saveEquipamento():void{
+   let obj = this.equipamentoService.postEquipamento(this.equipamento).subscribe();
+   console.log(obj)
+   console.log(this.equipamento)
+   console.log("enviado equipamneto")
   }
 
 }
