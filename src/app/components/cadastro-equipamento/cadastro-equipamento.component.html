@@ -5,14 +5,13 @@
             <div class="row my-4">
                 <div class="col-6">
                     <div class="form-floating mb-4 ">
-                        <input type="text" [(ngModel)]="equipamento.identificacao" name="equipamento.identificacao" class="form-control" placeholder="digite seu nome" id="nome">
+                        <input type="text" [(ngModel)]="equipamento.identificacao" name="equipamento.identificacao" class="form-control" placeholder="digite seu nome" id="identification">
                         <label for="identification">Identificação</label>
-                       
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="form-floating mb-4 ">
-                        <input  type="text" [(ngModel)]="equipamento.marca" name="equipamento.marca" class="form-control" placeholder="digite seu sobrenome" id="sobrenome">
+                        <input  type="text" [(ngModel)]="equipamento.marca" name="equipamento.marca" class="form-control" placeholder="digite seu sobrenome" id="brand">
                         <label for="brand">Marca</label>
                     </div>
                 </div>
@@ -20,13 +19,13 @@
             <div class="row my-4">
                 <div class="col-6">
                     <div class="form-floating mb-4 ">
-                        <input  type="text" [(ngModel)]="equipamento.modelo" name="equipamento.modelo"  class="form-control" placeholder="Modelo" id="idade">
+                        <input  type="text" [(ngModel)]="equipamento.modelo" name="equipamento.modelo"  class="form-control" placeholder="Modelo" id="model">
                         <label for="model">Modelo</label>
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="form-floating mb-4 ">
-                        <input type="text" class="form-control" [(ngModel)]="equipamento.codigo" name="equipamento.codigo" placeholder="Codigo Barras" id="profissao">
+                        <input type="text" class="form-control" [(ngModel)]="equipamento.codigo" name="equipamento.codigo" placeholder="Codigo Barras" id="code_bar">
                         <label for="code_bar">Codigo Barras</label>
                     </div>
                 </div>
@@ -34,7 +33,7 @@
             <div class="row my-4">
                 <div>
                     <div class="form-floating mb-4" style="height: 150px;">
-                        <input type="text" [(ngModel)]="equipamento.descricao" name="equipamento.descricao" class="form-control h-100" placeholder="Codigo Barras" id="profissao">
+                        <textarea [(ngModel)]="equipamento.descricao" name="equipamento.descricao" class="form-control h-100" formControlName="description" placeholder="Codigo Barras" id="description" cols="30" rows="4"></textarea>
                         <label for="description">Descrição</label>
                     </div>
                 </div>
