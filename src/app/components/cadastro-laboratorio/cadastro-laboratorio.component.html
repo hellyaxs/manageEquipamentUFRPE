@@ -5,13 +5,13 @@
             <div class="row my-4">
                 <div class="col-6">
                     <div class="form-floating mb-4 ">
-                        <input formControlName="nome" type="nome" class="form-control" placeholder="digite seu nome" id="nome">
+                        <input  type="text" [(ngModel)]="lab.identificacao" name="lab.identificacao" class="form-control" placeholder="digite seu nome">
                         <label for="identification">Identificação</label>
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="form-floating mb-4 ">
-                        <input formControlName="sobrenome" type="sobrenome" class="form-control" placeholder="digite seu sobrenome" id="sobrenome">
+                        <input  type="text" [(ngModel)]="lab.localizacao" name="lab.localizacao" class="form-control" placeholder="digite seu sobrenome">
                         <label for="location">Localização</label>
                     </div>
                 </div>
@@ -19,7 +19,7 @@
             <div class="row my-4">
                 <div class="col-12">
                     <div class="form-floating mb-4 ">
-                        <input formControlName="profissao" type="profissao" class="form-control" placeholder="Codigo Barras" id="profissao">
+                        <input  type="number" [(ngModel)]="lab.capacidade" name="lab.capacidade" class="form-control" placeholder="Codigo Barras" id="profissao">
                         <label for="code_bar">Capacidade</label>
                     </div>
                 </div>
@@ -27,17 +27,19 @@
             <div class="row my-4">
                 <div>
                     <div class="form-floating mb-4" style="height: 150px;">
-                        <textarea formControlName="profissao" type="profissao" class="form-control h-100" placeholder="Codigo Barras" id="profissao" cols="30" rows="4"></textarea>
+                        <textarea [(ngModel)]="lab.descricao" name="lab.descricao" class="form-control h-100" placeholder="Codigo Barras" cols="30" rows="4"></textarea>
                         <label for="description">Descrição</label>
                     </div>
                 </div>
             </div>
             <div class="row my-4">
                 <div class="form-group mt-4">
-                    <a type="button" class="btn btn-outline-danger float-start ">Cancelar</a>
-                    <a type="button" class="btn btn-outline-success float-end" >Enviar</a>
+                    <a type="button" class="btn btn-outline-danger float-start">Cancelar</a>
+                    <a type="button" class="btn btn-outline-success float-end" (click)="save()" >Enviar</a>
                 </div>
             </div>
         </form>
     </div>
 </div>
+
+
