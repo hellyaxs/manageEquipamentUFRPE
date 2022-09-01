@@ -30,8 +30,8 @@ export class EquipamentoService {
     return this.http.get<Equipamento>(this.API+id);
   }
 
-  public getEquipamento():Observable<Equipamento> {
-    return this.http.get<Equipamento>(this.API);
+  public getEquipamento():Observable<Equipamento[]> {
+    return this.http.get<Equipamento[]>(this.API);
   }
 
 

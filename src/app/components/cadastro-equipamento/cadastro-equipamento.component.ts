@@ -25,10 +25,7 @@ export class CadastroEquipamentoComponent implements OnInit {
   }
 
   saveEquipamento():void{
-   let obj = this.equipamentoService.postEquipamento(this.equipamento).subscribe();
-   console.log(obj)
-   console.log(this.equipamento)
-   console.log("enviado equipamneto")
+    this.equipamentoService.postEquipamento(this.equipamento).subscribe();
   }
 
 }
