@@ -7,14 +7,18 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { CadastroEquipamentoComponent } from './components/cadastro-equipamento/cadastro-equipamento.component';
 import { CadastroLaboratorioComponent } from './components/cadastro-laboratorio/cadastro-laboratorio.component';
+import { ListEquipmentComponent } from './components/list-equipment/list-equipment.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { ListLaboratoriosComponent } from './components/list-laboratorios/list-laboratorios.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CadastroEquipamentoComponent,
     CadastroLaboratorioComponent,
-    NavbarComponent
+    NavbarComponent,
+    ListLaboratoriosComponent,
+    ListEquipmentComponent
   ],
   imports: [
     BrowserModule,

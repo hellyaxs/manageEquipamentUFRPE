@@ -1,0 +1,38 @@
+<div class="card w-100 my-5" >
+    <div class="card-body">
+        <div class="row mb-4">
+            <div class="col-9">
+                <h1 class="card-title text-center">Equipamentos Disponiveis</h1>
+            </div>
+            <div class="col-3">
+                    <div class="btn-group mr-3" role="group" aria-label="">
+                        <a class="btn btn-dark" routerLink="/equipamentos"> 
+                            Equipamentos
+                        </a>
+                        <a class="btn btn-dark" routerLink="/laboratorios">
+                            Laboratorios
+                        </a>
+                    </div>
+            </div>
+        </div>
+        
+        <table class="table">
+            <thead>
+                <tr class="text-center">
+                    <th>identificacão</th>
+                    <th>marca</th>
+                    <th>modelo</th>
+                    <th>codigo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let equipamento of equipamentos" class="text-center text-uppercase">
+                    <td>{{equipamento.identificacao}}</td>
+                    <td>{{equipamento.marca}}</td>
+                    <td>{{equipamento.modelo}}</td>
+                    <td>{{equipamento.codigo}}</td> 
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
