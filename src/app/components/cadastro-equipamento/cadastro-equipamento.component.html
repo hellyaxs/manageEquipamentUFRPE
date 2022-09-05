@@ -33,7 +33,7 @@
             <div class="row my-4">
                 <div>
                     <div class="form-floating mb-4" style="height: 150px;">
-                        <textarea [(ngModel)]="equipamento.descricao" name="equipamento.descricao" class="form-control h-100" formControlName="description" placeholder="Codigo Barras" id="description" cols="30" rows="4"></textarea>
+                        <textarea type="text" [(ngModel)]="equipamento.descricao" name="equipamento.descricao" class="form-control h-100"  placeholder="Codigo Barras"  cols="30" rows="4"></textarea>
                         <label for="description">Descrição</label>
                     </div>
                 </div>
@@ -48,8 +48,3 @@
     </div>
 </div>
 
-<p>{{equipamento.identificacao}}</p>
-<p>{{equipamento.marca}}</p>
-<p>{{equipamento.modelo}}</p>
-<p>{{equipamento.codigo}}</p>
-<p>{{equipamento.descricao}}</p>
