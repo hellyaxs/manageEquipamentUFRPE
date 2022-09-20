@@ -23,18 +23,22 @@
                     <th>Localização</th>
                     <th>Capacidade</th>
                     <th>Descrição</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let equipamento of equipamentos" class="text-center text-uppercase">
+                    <td>{{lab.identificacao}}</td>
+                    <td>{{lab.localizacao}}</td>
+                    <td>{{lab.capacidade}}</td>
+                    <td>{{lab.descricao}}</td> 
                     <td>
                         <a href="">
-                            <img src="../../../assets/img/icon-caneta.png" alt="icone caneta" class="mr-2" routerLink="/cadastroLaboratorio" >
+                            <img src="../../../assets/img/icon-caneta.png" alt="icone caneta" class="mr-2" routerLink="/cadastroEquipamento" >
                         </a>
                         <a href="">
                             <img src="../../../assets/img/icon-excluir.png" alt="icone lixeira" >  
                         </a>
                     </td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="text-center text-uppercase"> 
                 </tr>
             </tbody>
         </table>
