@@ -5,5 +5,5 @@ export interface Equipamento {
     modelo:String;
     descricao:String;
     codigo:number;
-    
+    disponibilidade_equipament: boolean; 
 }

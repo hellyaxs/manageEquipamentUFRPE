@@ -14,7 +14,8 @@ export class CadastroLaboratorioComponent implements OnInit {
     identificacao: 0,
     localizacao: '',
     capacidade: 0,
-    descricao: ''
+    descricao: '',
+    disponibilidade_laboratorio: true 
   }
 
   constructor(private laboratorioService:LaboratorioService) { }
