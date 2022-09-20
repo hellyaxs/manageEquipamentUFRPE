@@ -26,11 +26,11 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let equipamento of equipamentos" class="text-center text-uppercase">
-                    <td>{{lab.identificacao}}</td>
-                    <td>{{lab.localizacao}}</td>
-                    <td>{{lab.capacidade}}</td>
-                    <td>{{lab.descricao}}</td> 
+                <tr *ngFor="let laboratorio of laboratorios" class="text-center text-uppercase">
+                    <td>{{laboratorio.identificacao}}</td>
+                    <td>{{laboratorio.localizacao}}</td>
+                    <td>{{laboratorio.capacidade}}</td>
+                    <td>{{laboratorio.descricao}}</td> 
                     <td>
                         <a href="">
                             <img src="../../../assets/img/icon-caneta.png" alt="icone caneta" class="mr-2" routerLink="/cadastroEquipamento" >
