@@ -10,6 +10,10 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 
 const routes: Routes = [
   {
+    path: '',
+    component: ListEquipmentComponent
+  },
+  {
     path: 'equipamentos',
     component: ListEquipmentComponent
   },
