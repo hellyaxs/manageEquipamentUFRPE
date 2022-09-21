@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Laboratorio } from 'src/app/interfaces/laboratorio';
 import { LaboratorioService } from 'src/app/services/laboratorio.service';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-laboratorios',
@@ -10,7 +11,7 @@ import { LaboratorioService } from 'src/app/services/laboratorio.service';
 export class ListLaboratoriosComponent implements OnInit {
 
   laboratorios: Array<Laboratorio> = [];
-  constructor(private EquipamentoService: LaboratorioService) { }
+  constructor(private EquipamentoService: LaboratorioService, private route: Router) { }
 
   ngOnInit(): void {
     this.getEquipamento(); 
@@ -20,6 +21,10 @@ export class ListLaboratoriosComponent implements OnInit {
     this.EquipamentoService.getLaboratorio().subscribe(response => { 
       this.laboratorios = response; 
     })
+  }
+  
+  redireciona():void { 
+    this.route.navigate(['/']);
   }
 
 }

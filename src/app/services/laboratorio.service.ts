@@ -16,6 +16,7 @@ export class LaboratorioService {
 
   public postLaboratorio(boydEquipamento:Laboratorio):Observable<Laboratorio> {
       return this.http.post<Laboratorio>(this.API,boydEquipamento);
+      
   }
 
   public putLaboratorio(id:number,boydEquipamento:Laboratorio) {
