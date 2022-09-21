@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+.table_radius:hover { 
+    box-shadow:  12px 12px 9px #c4c4c4,
+                -12px -12px 9px #ffffff;
+    cursor: pointer; 
+}
