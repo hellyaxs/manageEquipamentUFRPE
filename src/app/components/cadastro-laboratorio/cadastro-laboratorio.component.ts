@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Laboratorio } from 'src/app/interfaces/laboratorio';
 import { LaboratorioService } from 'src/app/services/laboratorio.service';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro-laboratorio',
@@ -18,12 +19,13 @@ export class CadastroLaboratorioComponent implements OnInit {
     disponibilidade_laboratorio: true 
   }
 
-  constructor(private laboratorioService:LaboratorioService) { }
+  constructor(private laboratorioService:LaboratorioService, private route: Router) { }
 
   ngOnInit(): void {
   }
 
   save():void{
     this.laboratorioService.postLaboratorio(this.lab).subscribe();
+    this.route.navigate(['/']);
   }
 }

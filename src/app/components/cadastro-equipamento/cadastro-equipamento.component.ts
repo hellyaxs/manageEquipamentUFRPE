@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Equipamento } from 'src/app/interfaces/equipamento';
 import { EquipamentoService } from 'src/app/services/equipamento.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro-equipamento',
@@ -19,14 +20,15 @@ export class CadastroEquipamentoComponent implements OnInit {
     disponibilidade_equipament: true
   };
 
-  constructor(private equipamentoService:EquipamentoService) { }
+  constructor(private equipamentoService:EquipamentoService, private route:Router) { }
 
   ngOnInit(): void {
     
   }
 
   saveEquipamento():void{
-    this.equipamentoService.postEquipamento(this.equipamento).subscribe();
+    this.equipamentoService.postEquipamento(this.equipamento).subscribe(  );
+    this.route.navigate(["/"]);
   }
 
 }

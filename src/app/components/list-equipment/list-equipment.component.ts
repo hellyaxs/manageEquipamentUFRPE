@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+
 import { Equipamento } from 'src/app/interfaces/equipamento';
 import { EquipamentoService } from 'src/app/services/equipamento.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-equipment',
@@ -11,8 +12,8 @@ import { EquipamentoService } from 'src/app/services/equipamento.service';
 export class ListEquipmentComponent implements OnInit {
 
   equipamentos: Array<Equipamento> = [];
-  constructor(private EquipamentoService: EquipamentoService,
-              private route:Router) { }
+
+  constructor(private EquipamentoService: EquipamentoService, private router: Router) {  }
 
   ngOnInit(): void {
     this.getEquipamento(); 
@@ -24,8 +25,14 @@ export class ListEquipmentComponent implements OnInit {
     })
   }
 
+
   visualizarEquipamento(id:number):void{
-    this.route.navigateByUrl(`/aluguelEquimento/${id}`);
+    this.router.navigateByUrl(`/aluguelEquimento/${id}`);
+  }
+
+  redireciona():void{
+    this.router.navigate(['/cadastroEquipamento']);
   }
 
 }
+
