@@ -11,7 +11,7 @@ export class LaboratorioService {
 
   constructor(private http:HttpClient) { }
 
-  private readonly API = `${environment.API}laboratorio/`
+  private readonly API = `${environment.API}laboratorios/`
  
 
   public postLaboratorio(boydEquipamento:Laboratorio):Observable<Laboratorio> {

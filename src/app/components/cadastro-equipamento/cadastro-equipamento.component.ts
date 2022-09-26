@@ -10,7 +10,7 @@ import { EquipamentoService } from 'src/app/services/equipamento.service';
 export class CadastroEquipamentoComponent implements OnInit {
 
   equipamento:Equipamento ={
-    id:"",
+    id:0,
     identificacao: '',
     marca: "",
     modelo: "",

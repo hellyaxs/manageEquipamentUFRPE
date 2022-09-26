@@ -1,5 +1,5 @@
 export interface Laboratorio {
-    id:string;
+    id:number;
     identificacao:number;
     localizacao:string;
     capacidade:number;

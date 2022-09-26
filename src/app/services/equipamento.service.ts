@@ -10,7 +10,7 @@ import { Equipamento } from '../interfaces/equipamento';
 
 export class EquipamentoService {
 
-  private readonly API = `${environment.API}equipamento/`
+  private readonly API = `${environment.API}equipamentos/`
  
   constructor(private http: HttpClient) { }
 

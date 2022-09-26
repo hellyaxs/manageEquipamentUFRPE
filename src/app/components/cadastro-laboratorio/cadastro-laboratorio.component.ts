@@ -10,7 +10,7 @@ import { LaboratorioService } from 'src/app/services/laboratorio.service';
 export class CadastroLaboratorioComponent implements OnInit {
 
   lab:Laboratorio = {
-    id: '',
+    id: 0,
     identificacao: 0,
     localizacao: '',
     capacidade: 0,
