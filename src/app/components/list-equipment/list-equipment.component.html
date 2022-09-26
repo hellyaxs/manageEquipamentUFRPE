@@ -26,13 +26,13 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let equipamento of equipamentos" class="text-center text-uppercase" (click)="redireciona()">
+                <tr *ngFor="let equipamento of equipamentos" class="text-center text-uppercase" (click)="visualizarEquipamento(equipamento.id)">
                     <td>{{equipamento.identificacao}}</td>
                     <td>{{equipamento.marca}}</td>
                     <td>{{equipamento.modelo}}</td>
                     <td>{{equipamento.codigo}}</td> 
                     <td>
-                        <a href="">
+                        <a href="" (click)="redireciona()">
                             <img src="../../../assets/img/icon-caneta.png" alt="icone caneta" class="mr-2" routerLink="/cadastroEquipamento" >
                         </a>
                         <a href="">

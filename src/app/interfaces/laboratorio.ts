@@ -4,5 +4,5 @@ export interface Laboratorio {
     localizacao:string;
     capacidade:number;
     descricao:string;
-    disponibilidade_laboratorio: boolean; 
+    disponibilidade: boolean; 
 }

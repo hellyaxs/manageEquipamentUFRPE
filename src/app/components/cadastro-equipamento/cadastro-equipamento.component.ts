@@ -17,7 +17,7 @@ export class CadastroEquipamentoComponent implements OnInit {
     modelo: "",
     descricao: "",
     codigo: 0, 
-    disponibilidade_equipament: true
+    disponibilidade: true
   };
 
   constructor(private equipamentoService:EquipamentoService, private route:Router) { }
