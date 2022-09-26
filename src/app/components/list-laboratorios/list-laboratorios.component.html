@@ -26,16 +26,16 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let laboratorio of laboratorios" class="text-center text-uppercase" click="redireciona()">
+                <tr *ngFor="let laboratorio of laboratorios" class="text-center text-uppercase cursor" (click)="redirecionaLab()">
                     <td>{{laboratorio.identificacao}}</td>
                     <td>{{laboratorio.localizacao}}</td>
                     <td>{{laboratorio.capacidade}}</td>
                     <td>{{laboratorio.descricao}}</td> 
                     <td>
-                        <a href="">
-                            <img src="../../../assets/img/icon-caneta.png" alt="icone caneta" class="mr-2" routerLink="/cadastroEquipamento" >
+                        <a routerLink="/cadastroLaboratorio">
+                            <img src="../../../assets/img/icon-caneta.png" alt="icone caneta" class="mr-2"  >
                         </a>
-                        <a href="">
+                        <a >
                             <img src="../../../assets/img/icon-excluir.png" alt="icone lixeira" >  
                         </a>
                     </td>

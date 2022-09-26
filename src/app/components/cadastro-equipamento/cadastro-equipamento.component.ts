@@ -27,7 +27,7 @@ export class CadastroEquipamentoComponent implements OnInit {
   }
 
   saveEquipamento():void{
-    this.equipamentoService.postEquipamento(this.equipamento).subscribe(  );
+    this.equipamentoService.postEquipamento(this.equipamento).subscribe();
     this.route.navigate(["/"]);
   }
 

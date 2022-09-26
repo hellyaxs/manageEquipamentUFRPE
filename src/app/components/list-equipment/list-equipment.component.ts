@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 
 import { Equipamento } from 'src/app/interfaces/equipamento';
 import { EquipamentoService } from 'src/app/services/equipamento.service';
@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   templateUrl: './list-equipment.component.html',
   styleUrls: ['./list-equipment.component.css']
 })
-export class ListEquipmentComponent implements OnInit {
+export class ListEquipmentComponent implements OnInit,OnChanges {
 
   equipamentos: Array<Equipamento> = [];
 
@@ -18,6 +18,11 @@ export class ListEquipmentComponent implements OnInit {
   ngOnInit(): void {
     this.getEquipamento(); 
   }
+
+  ngOnChanges(): void {
+      this.getEquipamento();
+  }
+
 
   getEquipamento():void { 
     this.EquipamentoService.getEquipamento().subscribe(response => { 
@@ -31,7 +36,7 @@ export class ListEquipmentComponent implements OnInit {
   }
 
   redireciona():void{
-    this.router.navigate(['/cadastroEquipamento']);
+    this.router.navigate(['/cadastroEquipamento/']);
   }
 
 }

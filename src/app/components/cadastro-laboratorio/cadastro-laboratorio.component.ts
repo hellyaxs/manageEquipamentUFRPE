@@ -26,6 +26,6 @@ export class CadastroLaboratorioComponent implements OnInit {
 
   save():void{
     this.laboratorioService.postLaboratorio(this.lab).subscribe();
-    this.route.navigate(['/']);
+    this.route.navigate(['/laboratorios']);
   }
 }
