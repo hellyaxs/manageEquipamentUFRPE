@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Equipamento } from 'src/app/interfaces/equipamento';
 import { EquipamentoService } from 'src/app/services/equipamento.service';
 import { Router } from '@angular/router';
+import { state } from '@angular/animations';
 
 @Component({
   selector: 'app-cadastro-equipamento',
@@ -28,7 +29,7 @@ export class CadastroEquipamentoComponent implements OnInit {
 
   saveEquipamento():void{
     this.equipamentoService.postEquipamento(this.equipamento).subscribe();
-    this.route.navigate(["/"]);
+    this.route.navigate(["/"] );
   }
 
 }

@@ -36,7 +36,7 @@ export class ListEquipmentComponent implements OnInit,OnChanges {
   }
 
   editEquipamento(): void { 
-    this.router.navigate(["/cadastroEquipamento/"])
+    this.router.navigate(["/cadastroEquipamento"])
   }
 
 }
