@@ -35,8 +35,8 @@ export class ListEquipmentComponent implements OnInit,OnChanges {
     this.router.navigateByUrl(`/aluguelEquipamento/${id}`);
   }
 
-  editEquipamento(): void { 
-    this.router.navigate(["/cadastroEquipamento"],{state:this.equipamentos})
+  editEquipamento(equipamento: Equipamento): void { 
+    this.router.navigate(["/cadastroEquipamento"], { state: equipamento})
   }
 
 }

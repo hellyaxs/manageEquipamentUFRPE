@@ -13,7 +13,7 @@ export class CadastroEquipamentoComponent implements OnInit {
 
   equipamento:Equipamento ={
     id:0,
-    identificacao: '',
+    identificacao: "",
     marca: "",
     modelo: "",
     descricao: "",
@@ -24,7 +24,9 @@ export class CadastroEquipamentoComponent implements OnInit {
   constructor(private equipamentoService:EquipamentoService, private route:Router) { }
 
   ngOnInit(): void {
-    
+    const navigation = this.route.getCurrentNavigation()
+    this.equipamento = navigation?.extras.state as Equipamento
+    console.log(navigation)
   }
 
   saveEquipamento():void{
