@@ -1,9 +1,9 @@
 export interface Equipamento {
     id:number;
     identificacao:string;
-    marca:String;
-    modelo:String;
-    descricao:String;
+    marca:string;
+    modelo:string;
+    descricao:string;
     codigo:number;
     disponibilidade: boolean; 
 }
