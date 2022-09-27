@@ -10,6 +10,7 @@ import { CadastroLaboratorioComponent } from './components/cadastro-laboratorio/
 import { ListEquipmentComponent } from './components/list-equipment/list-equipment.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import ListLaboratoriosComponent from './components/list-laboratorios/list-laboratorios.component';
+import { AluguelComponent } from './components/aluguel/aluguel.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import ListLaboratoriosComponent from './components/list-laboratorios/list-labor
     NavbarComponent,
     ListLaboratoriosComponent,
     ListEquipmentComponent,
+    AluguelComponent,
   ],
   imports: [
     BrowserModule,
