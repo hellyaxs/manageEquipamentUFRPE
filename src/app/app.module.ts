@@ -20,7 +20,6 @@ import ListLaboratoriosComponent from './components/list-laboratorios/list-labor
     NavbarComponent,
     ListLaboratoriosComponent,
     ListEquipmentComponent,
-    ModalboxComponent
   ],
   imports: [
     BrowserModule,

@@ -36,7 +36,7 @@ const routes: Routes = [
     children:[
       {
         path: ':id',
-        component: 
+        component: ListLaboratoriosComponent
       }
     ]
   }, 
