@@ -10,7 +10,6 @@ import { CadastroLaboratorioComponent } from './components/cadastro-laboratorio/
 import { ListEquipmentComponent } from './components/list-equipment/list-equipment.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import ListLaboratoriosComponent from './components/list-laboratorios/list-laboratorios.component';
-import { ModalboxComponent } from './components/modalbox/modalbox.component';
 
 
 @NgModule({
