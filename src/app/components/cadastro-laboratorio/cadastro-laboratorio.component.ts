@@ -12,7 +12,7 @@ export class CadastroLaboratorioComponent implements OnInit {
 
   lab:Laboratorio = {
     id: 0,
-    identificacao: 0,
+    identificacao: '',
     localizacao: '',
     capacidade: 0,
     descricao: '',
