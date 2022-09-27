@@ -32,11 +32,11 @@ export class ListEquipmentComponent implements OnInit,OnChanges {
 
 
   visualizarEquipamento(id:number):void{
-    this.router.navigateByUrl(`/aluguelEquimento/${id}`);
+    this.router.navigateByUrl(`/aluguelEquipamento/${id}`);
   }
 
-  redireciona():void{
-    this.router.navigate(['/cadastroEquipamento/']);
+  editEquipamento(): void { 
+    this.router.navigate(["/cadastroEquipamento/"])
   }
 
 }

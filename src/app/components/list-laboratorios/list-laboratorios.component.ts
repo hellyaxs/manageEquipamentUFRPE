@@ -27,9 +27,12 @@ export default class ListLaboratoriosComponent implements OnInit,OnChanges {
       this.laboratorios = response; 
     })
   }
-  
-  redirecionaLab():void { 
-    this.route.navigate(['/cadastroLaboratorio']);
+
+  visualizarLaboratorio(id:number):void{
+    this.route.navigateByUrl(`/aluguelLaboratorio/${id}`);
   }
 
+  editLaboratorio(): void { 
+    this.route.navigate(["/cadastroLaboratorio"])
+  }
 }
