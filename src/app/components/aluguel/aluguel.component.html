@@ -1,2 +1,15 @@
-<p>aluguel works!</p>
-<full-calendar #calendar [options]="calendarOptions"navLinks="false"></full-calendar>
+<!--<full-calendar #calendar [options]="calendarOptions"navLinks="false"></full-calendar>-->
+<div class="container" ngIf="equipamento_upado">
+    <div class="jumbotron mt-3 bg-light p-3 rounded">
+      <h1>{{equipamentos.identificacao}}</h1>
+      <p class="lead">Este exemplo é um rápido exercício para ilustrar como a navbar (na parte inferior) funciona.</p>
+      <a class="btn btn-lg btn-primary" href="../../components/navbar/" role="button">Veja a documentação »</a>
+    </div>
+</div>
+<div class="container" ngIf="laboratorio_upado">
+    <div class="jumbotron mt-3 bg-light p-3 rounded">
+      <h1>{{laboratorios.identificacao}}</h1>
+      <p class="lead">Este exemplo é um rápido exercício para ilustrar como a navbar (na parte inferior) funciona.</p>
+      <a class="btn btn-lg btn-primary" href="../../components/navbar/" role="button">Veja a documentação »</a>
+    </div>
+</div>

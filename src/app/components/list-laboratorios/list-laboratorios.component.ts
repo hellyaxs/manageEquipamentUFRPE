@@ -30,8 +30,8 @@ export default class ListLaboratoriosComponent implements OnInit {
     })
   }
 
-  visualizarLaboratorio(id:number):void{
-    this.route.navigateByUrl(`/aluguelLaboratorio/${id}`);
+  visualizarLaboratorio(lab:Laboratorio):void{
+    this.route.navigateByUrl(`/aluguelLaboratorio/${lab.id}`, {state:lab});
   }
 
   editLaboratorio(lab:Laboratorio): void { 

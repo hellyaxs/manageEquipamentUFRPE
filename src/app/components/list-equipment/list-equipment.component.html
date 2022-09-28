@@ -26,7 +26,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let equipamento of equipamentos" class="text-center text-uppercase cursor" (click)="visualizarEquipamento(equipamento.id)">
+                <tr *ngFor="let equipamento of equipamentos" class="text-center text-uppercase cursor" (click)="visualizarEquipamento(equipamento)">
                     <td>{{equipamento.identificacao}}</td>
                     <td>{{equipamento.marca}}</td>
                     <td>{{equipamento.modelo}}</td>
