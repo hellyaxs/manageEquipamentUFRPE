@@ -30,8 +30,15 @@ export class CadastroEquipamentoComponent implements OnInit {
   }
 
   saveEquipamento():void{
-    this.equipamentoService.postEquipamento(this.equipamento).subscribe();
-    this.route.navigate(["/"] );
+    const navigation = this.route.getCurrentNavigation()
+    if(navigation?.extras.state !=null&&navigation?.extras.state != undefined){
+      this.equipamentoService.putEquipamento(this.equipamento)
+    
+    }else{
+      this.equipamentoService.postEquipamento(this.equipamento).subscribe();
+      this.route.navigate(["/"] );
+    }
+    
   }
 
   loadEquipamneto():void{

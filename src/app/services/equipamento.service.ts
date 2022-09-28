@@ -18,8 +18,8 @@ export class EquipamentoService {
       return this.http.post<Equipamento>(this.API,boydEquipamento);
   }
 
-  public putEquipamento(id:number,boydEquipamento:Equipamento) {
-    this.http.put<Equipamento>(this.API+id,boydEquipamento)
+  public putEquipamento(boydEquipamento:Equipamento) {
+    this.http.put<Equipamento>(this.API+boydEquipamento.id,boydEquipamento)
   }
 
   public delete(id:number){
