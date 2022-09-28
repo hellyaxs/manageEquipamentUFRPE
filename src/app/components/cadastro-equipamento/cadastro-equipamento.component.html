@@ -33,14 +33,14 @@
             <div class="row my-4">
                 <div>
                     <div class="form-floating mb-4" style="height: 150px;">
-                        <textarea type="text" [(ngModel)]="equipamento.descricao" name="equipamento.descricao" class="form-control h-100"  placeholder="Codigo Barras"  cols="30" rows="4"></textarea>
+                        <textarea type="text" [(ngModel)]="equipamento.descricao" name="descricao" class="form-control h-100"  placeholder="Codigo Barras"  cols="30" rows="4"></textarea>
                         <label for="description">Descrição</label>
                     </div>
                 </div>
             </div>
             <div class="row my-4">
                 <div class="form-group mt-4">
-                    <a type="button" class="btn btn-outline-danger float-start">Cancelar</a>
+                    <a type="button" class="btn btn-outline-danger float-start" routerLink="/">Cancelar</a>
                     <a type="button" class="btn btn-outline-success float-end" (click)="saveEquipamento()" >Enviar</a>
                 </div>
             </div>

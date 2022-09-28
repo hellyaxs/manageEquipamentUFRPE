@@ -9,20 +9,21 @@ import { Router } from '@angular/router';
   templateUrl: './list-equipment.component.html',
   styleUrls: ['./list-equipment.component.css']
 })
-export class ListEquipmentComponent implements OnInit,OnChanges {
+export class ListEquipmentComponent implements OnInit {
 
   equipamentos: Array<Equipamento> = [];
 
-  constructor(private EquipamentoService: EquipamentoService, private router: Router) {  }
+  constructor(private EquipamentoService: EquipamentoService, private router: Router) { 
+    this.router.events.subscribe(x=>{
+      this.getEquipamento();
+    });
+   }
 
   ngOnInit(): void {
     this.getEquipamento(); 
   }
 
-  ngOnChanges(): void {
-      this.getEquipamento();
-  }
-
+ 
 
   getEquipamento():void { 
     this.EquipamentoService.getEquipamento().subscribe(response => { 

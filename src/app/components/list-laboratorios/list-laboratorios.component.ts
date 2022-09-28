@@ -8,18 +8,20 @@ import { Route, Router } from '@angular/router';
   templateUrl: './list-laboratorios.component.html',
   styleUrls: ['./list-laboratorios.component.css']
 })
-export default class ListLaboratoriosComponent implements OnInit,OnChanges {
+export default class ListLaboratoriosComponent implements OnInit {
 
   laboratorios: Array<Laboratorio> = [];
-  constructor(private EquipamentoService: LaboratorioService, private route: Router) { }
+  constructor(private EquipamentoService: LaboratorioService, private route: Router) {
+    this.route.events.subscribe(x=>{
+      this.getLaboratorio();
+    });
+   }
 
   ngOnInit(): void {
      this.getLaboratorio()
   }
 
-  ngOnChanges():void{
-    this.getLaboratorio()
-  }
+
 
   getLaboratorio():void { 
     
@@ -32,7 +34,7 @@ export default class ListLaboratoriosComponent implements OnInit,OnChanges {
     this.route.navigateByUrl(`/aluguelLaboratorio/${id}`);
   }
 
-  editLaboratorio(): void { 
-    this.route.navigate(["/cadastroLaboratorio"])
+  editLaboratorio(lab:Laboratorio): void { 
+    this.route.navigate(["/cadastroLaboratorio"],{state:lab})
   }
 }

@@ -13,25 +13,34 @@ export class CadastroEquipamentoComponent implements OnInit {
 
   equipamento:Equipamento ={
     id:0,
-    identificacao: "",
-    marca: "",
-    modelo: "",
-    descricao: "",
-    codigo: 0, 
-    disponibilidade: true
+    identificacao:'',
+    marca:'',
+    modelo:'',
+    descricao:'',
+    codigo:0,
+    disponibilidade: true 
   };
 
-  constructor(private equipamentoService:EquipamentoService, private route:Router) { }
+  constructor(private equipamentoService:EquipamentoService, private route:Router) {
+   this.route.events.subscribe(x=>this.loadEquipamneto());
+   }
 
   ngOnInit(): void {
-    const navigation = this.route.getCurrentNavigation()
-    this.equipamento = navigation?.extras.state as Equipamento
-    console.log(navigation)
+    
   }
 
   saveEquipamento():void{
     this.equipamentoService.postEquipamento(this.equipamento).subscribe();
     this.route.navigate(["/"] );
+  }
+
+  loadEquipamneto():void{
+    const navigation = this.route.getCurrentNavigation()
+    if(navigation?.extras.state !=null&&navigation?.extras.state != undefined){
+      this.equipamento = navigation?.extras.state as Equipamento
+    
+    }
+    console.log(navigation?.extras.state)
   }
 
 }
