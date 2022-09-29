@@ -32,8 +32,8 @@ export class ListEquipmentComponent implements OnInit {
   }
 
 
-  visualizarEquipamento(id:number):void{
-    this.router.navigateByUrl(`/aluguelEquipamento/${id}`);
+  visualizarEquipamento(equipamento: Equipamento):void{
+    this.router.navigateByUrl(`/aluguelEquipamento/${equipamento.id}`,  { state: equipamento});
   }
 
   editEquipamento(equipamento: Equipamento): void { 
