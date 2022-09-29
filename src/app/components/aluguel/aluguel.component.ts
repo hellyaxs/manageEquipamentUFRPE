@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
+import { LoadChildren, Router } from '@angular/router';
 import { CalendarOptions } from '@fullcalendar/angular';
 import { Equipamento } from 'src/app/interfaces/equipamento';
 import { Laboratorio } from 'src/app/interfaces/laboratorio';
@@ -14,10 +14,7 @@ import { LaboratorioService } from 'src/app/services/laboratorio.service';
 })
 export class AluguelComponent implements OnInit {
 
-  equipamentos!: Equipamento
-  laboratorios!: Laboratorio
-  laboratorio_upado!: boolean
-  equipamento_upado!: boolean
+  cadastrado!: (Laboratorio | Equipamento)
 
   constructor(private router:Router, private equipamentoService:EquipamentoService, private laboratorioService: LaboratorioService ) {
     this.router.events.subscribe(x=>{
@@ -32,16 +29,14 @@ export class AluguelComponent implements OnInit {
   loadEquipamento():void{
     const navigation = this.router.getCurrentNavigation()
     if(navigation?.extras.state !=null&&navigation?.extras.state != undefined){
-      this.equipamentos = navigation?.extras.state as Equipamento
-      this.equipamento_upado = true; 
+      this.cadastrado = navigation?.extras.state as Equipamento
     }
   }
 
   loadLaboratorio():void { 
     const navigation = this.router.getCurrentNavigation()
     if(navigation?.extras.state !=null&&navigation?.extras.state != undefined){
-      this.laboratorios = navigation?.extras.state as Laboratorio
-      this.laboratorio_upado = true; 
+      this.cadastrado = navigation?.extras.state as Laboratorio
     }
   }
 
