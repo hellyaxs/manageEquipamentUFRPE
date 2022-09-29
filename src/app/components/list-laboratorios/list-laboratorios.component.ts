@@ -24,7 +24,6 @@ export default class ListLaboratoriosComponent implements OnInit {
 
 
   getLaboratorio():void { 
-    
     this.EquipamentoService.getLaboratorio().subscribe(response => { 
       this.laboratorios = response; 
     })

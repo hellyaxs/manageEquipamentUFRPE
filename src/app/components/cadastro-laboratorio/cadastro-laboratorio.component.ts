@@ -19,13 +19,31 @@ export class CadastroLaboratorioComponent implements OnInit {
     disponibilidade: true 
   }
 
-  constructor(private laboratorioService:LaboratorioService, private route: Router) { }
+  constructor(private laboratorioService:LaboratorioService, private route: Router) {
+    this.route.events.subscribe(x=>{this.loadLaboratorio()   });
+   }
 
   ngOnInit(): void {
   }
 
   save():void{
-    this.laboratorioService.postLaboratorio(this.lab).subscribe();
-    this.route.navigate(['/laboratorios']);
+    const navigation = this.route.getCurrentNavigation()
+    if(navigation?.extras.state !=null&&navigation?.extras.state != undefined){
+      this.laboratorioService.putLaboratorio(this.lab)
+    
+    }else{
+      this.laboratorioService.postLaboratorio(this.lab).subscribe();
+      this.route.navigate(['/laboratorios']);
+
+    }
+  }
+
+  loadLaboratorio():void{
+    const navigation = this.route.getCurrentNavigation()
+    if(navigation?.extras.state !=null&&navigation?.extras.state != undefined){
+      this.lab = navigation?.extras.state as Laboratorio
+    
+    }
+    console.log(navigation?.extras.state)
   }
 }
