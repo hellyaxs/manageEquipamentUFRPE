@@ -14,12 +14,15 @@ import { LaboratorioService } from 'src/app/services/laboratorio.service';
 })
 export class AluguelComponent implements OnInit {
 
-  cadastrado!: (Laboratorio | Equipamento)
+  equipamento!: Equipamento 
+  laboratorio!: Laboratorio
+  equipamento_upado!: boolean  
+  laboratorio_upado!: boolean
 
   constructor(private router:Router, private equipamentoService:EquipamentoService, private laboratorioService: LaboratorioService ) {
     this.router.events.subscribe(x=>{
-      this.loadEquipamento(),
-      this.loadLaboratorio()
+      this.loadEquipamento,
+      this.loadLaboratorio
     });
    }
 
@@ -28,15 +31,15 @@ export class AluguelComponent implements OnInit {
 
   loadEquipamento():void{
     const navigation = this.router.getCurrentNavigation()
-    if(navigation?.extras.state !=null&&navigation?.extras.state != undefined){
-      this.cadastrado = navigation?.extras.state as Equipamento
+    if(navigation?.extras.state !=null && navigation?.extras.state != undefined){
+      this.equipamento = navigation?.extras.state as Equipamento
     }
   }
 
   loadLaboratorio():void { 
     const navigation = this.router.getCurrentNavigation()
     if(navigation?.extras.state !=null&&navigation?.extras.state != undefined){
-      this.cadastrado = navigation?.extras.state as Laboratorio
+      this.laboratorio = navigation?.extras.state as Laboratorio
     }
   }
 
