@@ -10,22 +10,24 @@ import { CadastroEquipamentoComponent } from './components/cadastro-equipamento/
 import { CadastroLaboratorioComponent } from './components/cadastro-laboratorio/cadastro-laboratorio.component';
 import { ListEquipmentComponent } from './components/list-equipment/list-equipment.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import ListLaboratoriosComponent from './components/list-laboratorios/list-laboratorios.component';
+import { ListLaboratoriosComponent }  from './components/list-laboratorios/list-laboratorios.component';
 import { AluguelComponent } from './components/aluguel/aluguel.component';
-import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin!
-import interactionPlugin from '@fullcalendar/interaction'; // a plugin!
-import bootstrap5Plugin from '@fullcalendar/bootstrap5';
+// import { dayGridPlugin } from '@fullcalendar/daygrid'; // a plugin!
+// import { interactionPlugin }  from '@fullcalendar/interaction'; // a plugin!
+// import { bootstrap5Plugin }  from '@fullcalendar/bootstrap5';
 import { DemoComponentComponent } from './components/demo-component/demo-component.component';
+import { AluguelEquipamentoComponent } from './components/aluguel-equipamento/aluguel-equipamento.component';
+import { AluguelLaboratorioComponent } from './components/aluguel-laboratorio/aluguel-laboratorio.component';
 // import { FlatpickrModule } from 'angularx-flatpickr';
 // import { CalendarModule, DateAdapter } from 'angular-calendar';
 // import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 // import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 
-FullCalendarModule.registerPlugins([ // register FullCalendar plugins
-  dayGridPlugin,
-  interactionPlugin,
-  bootstrap5Plugin
-]);
+// FullCalendarModule.registerPlugins([ // register FullCalendar plugins
+//   dayGridPlugin,
+//   interactionPlugin,
+//   bootstrap5Plugin
+// ]);
 
 @NgModule({
   declarations: [
@@ -37,6 +39,8 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     ListEquipmentComponent,
     AluguelComponent,
     DemoComponentComponent,
+    AluguelEquipamentoComponent,
+    AluguelLaboratorioComponent,
     
   ],
   imports: [
