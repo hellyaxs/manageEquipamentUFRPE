@@ -15,7 +15,7 @@ export class AluguelEquipamentoComponent implements OnInit {
 
   constructor(private router:Router, private equipamentoService:EquipamentoService) {
     this.router.events.subscribe(x=>{
-      this.loadEquipamento
+      this.loadEquipamento()
     });
   }
 
