@@ -11,6 +11,7 @@ import { Route, Router } from '@angular/router';
 export class CadastroLaboratorioComponent implements OnInit {
 
   lab:Laboratorio = {
+    type:"Laboratorio",
     id: 0,
     identificacao: '',
     localizacao: '',
@@ -42,8 +43,9 @@ export class CadastroLaboratorioComponent implements OnInit {
     const navigation = this.route.getCurrentNavigation()
     if(navigation?.extras.state !=null&&navigation?.extras.state != undefined){
       this.lab = navigation?.extras.state as Laboratorio
+      this.lab.type ="Laboratorio"
     
     }
-    console.log(navigation?.extras.state)
+   
   }
 }

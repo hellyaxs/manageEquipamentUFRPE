@@ -1,4 +1,5 @@
 export interface Laboratorio {
+    type:"Laboratorio";
     id:number;
     identificacao:string;
     localizacao:string;

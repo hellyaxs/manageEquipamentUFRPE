@@ -51,7 +51,18 @@ const routes: Routes = [
         component: AluguelLaboratorioComponent
       }
     ]
-  } 
+  },
+  {
+    path:'alugar',
+    children:[
+      {
+        path: ':id',
+        component:AluguelComponent
+      }
+    ]
+    
+  }
+
 ];
 
 @NgModule({

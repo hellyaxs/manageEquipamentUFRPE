@@ -25,6 +25,7 @@ export class AluguelLaboratorioComponent implements OnInit {
     const navigation = this.router.getCurrentNavigation()
     if(navigation?.extras.state !=null&&navigation?.extras.state != undefined){
       this.laboratorio = navigation?.extras.state as Laboratorio
+      this.laboratorio.type ="Laboratorio"
     }
   }
 

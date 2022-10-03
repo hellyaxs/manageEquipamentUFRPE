@@ -13,7 +13,7 @@ export class AluguelLabService {
 
   constructor(private http:HttpClient) { }
 
-  public alugarEquipamneto(aluguelLaboratorio: AluguelLab):Observable<AluguelLab>{
+  public alugarLaboratorio(aluguelLaboratorio: AluguelLab):Observable<AluguelLab>{
     return this.http.post<AluguelLab>(this.API,aluguelLaboratorio);
   }
 

@@ -1,35 +1,45 @@
-<!--<full-calendar #calendar [options]="calendarOptions"navLinks="false"></full-calendar>-->
-<div class="container" ngIf="">
-    <div class="jumbotron mt-3 bg-light p-3 rounded">
-      <h1 class="text-center text-capitalize">{{equipamento.identificacao}}</h1>
-      <div class="container">
-        <div class="row">
-          <div class="col-6">
-              <img src="" alt="">
-          </div>
-          <div class="col-6">
+<div class="row text-center">
 
+  <div class="col-md-4">
+      <div class="btn-group">
+          <div class="btn btn-primary" mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate">
+              Previous
           </div>
-        </div>
+          <div class="btn btn-outline-secondary" mwlCalendarToday [(viewDate)]="viewDate">
+              Today
+          </div>
+          <div class="btn btn-primary" mwlCalendarNextView [view]="view" [(viewDate)]="viewDate">
+              Next
+          </div>
       </div>
-      <p class="lead">Este exemplo é um rápido exercício para ilustrar como a navbar (na parte inferior) funciona.</p>
-      <a class="btn btn-lg btn-primary" href="../../components/navbar/" role="button">Veja a documentação »</a> 
+  </div>
+  <div class="col-md-4">
+    <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>
+  </div>
+  <div class="col-md-4">
+    <div class="btn-group">
+        <div class="btn btn-primary" (click)="setView(CalendarView.Month)" [class.active]="view === CalendarView.Month">
+            Month
+        </div>
+        <div class="btn btn-primary" (click)="setView(CalendarView.Week)" [class.active]="view === CalendarView.Week">
+            Week
+        </div>
+        <div class="btn btn-primary" (click)="setView(CalendarView.Day)" [class.active]="view === CalendarView.Day">
+            Day
+        </div>
     </div>
 </div>
-<div class="container" ngIf="">
-  <div class="jumbotron mt-3 bg-light p-3 rounded">
-    <h1 class="text-center text-capitalize">{{laboratorio.identificacao}}</h1>
-    <div class="container">
-      <div class="row">
-        <div class="col-6">
-            <img src="" alt="">
-        </div>
-        <div class="col-6">
+</div>
 
-        </div>
-      </div>
-    </div>
-    <p class="lead">Este exemplo é um rápido exercício para ilustrar como a navbar (na parte inferior) funciona.</p>
-    <a class="btn btn-lg btn-primary" href="../../components/navbar/" role="button">Veja a documentação »</a> 
-  </div>
+<div [ngSwitch]="view" >
+
+  <mwl-calendar-month-view *ngSwitchCase="CalendarView.Month" [viewDate]="viewDate"  [events]="events">
+  </mwl-calendar-month-view>
+
+  <mwl-calendar-week-view *ngSwitchCase="CalendarView.Week" [viewDate]="viewDate"  [events]="events">
+  </mwl-calendar-week-view>
+
+  <mwl-calendar-day-view *ngSwitchCase="CalendarView.Day" [viewDate]="viewDate"  [events]="events">
+  </mwl-calendar-day-view>
+
 </div>

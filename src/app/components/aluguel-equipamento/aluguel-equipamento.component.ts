@@ -26,6 +26,7 @@ export class AluguelEquipamentoComponent implements OnInit {
     const navigation = this.router.getCurrentNavigation()
     if(navigation?.extras.state !=null && navigation?.extras.state != undefined){
       this.equipamento = navigation?.extras.state as Equipamento
+      this.equipamento.type = "Equipamento"
     }
   }
 

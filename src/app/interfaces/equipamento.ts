@@ -1,4 +1,5 @@
 export interface Equipamento {
+    type:"Equipamento";
     id:number;
     identificacao:string;
     marca:string;

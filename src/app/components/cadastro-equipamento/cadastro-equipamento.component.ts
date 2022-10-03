@@ -12,6 +12,7 @@ import { state } from '@angular/animations';
 export class CadastroEquipamentoComponent implements OnInit {
 
   equipamento:Equipamento ={
+    type:"Equipamento",
     id:0,
     identificacao:'',
     marca:'',
@@ -45,6 +46,7 @@ export class CadastroEquipamentoComponent implements OnInit {
     const navigation = this.route.getCurrentNavigation()
     if(navigation?.extras.state !=null&&navigation?.extras.state != undefined){
       this.equipamento = navigation?.extras.state as Equipamento
+      this.equipamento.type ="Equipamento"
     
     }
 

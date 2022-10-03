@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
 .table_radius:hover { 
     box-shadow:  12px 12px 9px #c4c4c4,
                 -12px -12px 9px #ffffff;
@@ -6,4 +8,7 @@
 }
 .cursor{
     cursor:pointer;
+}
+.cal-events {
+    display: none !important;
 }
