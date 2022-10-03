@@ -47,7 +47,7 @@ export class CadastroEquipamentoComponent implements OnInit {
       this.equipamento = navigation?.extras.state as Equipamento
     
     }
-    console.log(navigation?.extras.state)
+
   }
 
 }

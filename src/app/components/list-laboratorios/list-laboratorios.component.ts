@@ -8,7 +8,7 @@ import { Route, Router } from '@angular/router';
   templateUrl: './list-laboratorios.component.html',
   styleUrls: ['./list-laboratorios.component.css']
 })
-export default class ListLaboratoriosComponent implements OnInit {
+export class ListLaboratoriosComponent implements OnInit {
 
   laboratorios: Array<Laboratorio> = [];
   constructor(private EquipamentoService: LaboratorioService, private route: Router) {
@@ -24,7 +24,6 @@ export default class ListLaboratoriosComponent implements OnInit {
 
 
   getLaboratorio():void { 
-    
     this.EquipamentoService.getLaboratorio().subscribe(response => { 
       this.laboratorios = response; 
     })

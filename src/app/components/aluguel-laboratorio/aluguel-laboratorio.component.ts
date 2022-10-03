@@ -14,7 +14,7 @@ export class AluguelLaboratorioComponent implements OnInit {
 
   constructor(private router:Router, private laboratorioService: LaboratorioService) { 
     this.router.events.subscribe(x=>{
-      this.loadLaboratorio
+      this.loadLaboratorio();
     });
   }
 

@@ -19,8 +19,8 @@ export class LaboratorioService {
       
   }
 
-  public putLaboratorio(id:number,boydEquipamento:Laboratorio) {
-    this.http.put<Laboratorio>(this.API+id,boydEquipamento)
+  public putLaboratorio(boydLaboratorios:Laboratorio) {
+    this.http.put<Laboratorio>(this.API+boydLaboratorios.id,boydLaboratorios)
   }
 
   public delete(id:number){
