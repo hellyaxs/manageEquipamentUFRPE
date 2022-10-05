@@ -48,6 +48,7 @@ export class AluguelEquipamentoComponent implements OnInit {
       this.loadEquipamento()
       this.aluguel.solicitacao = new Date(this.date+" "+this.time);
       this.aluguel.equipamento = this.equipamento
+      console.log(this.equipamento)
       this.aluguelService.alugarEquipamneto(this.aluguel).subscribe();
     }
     

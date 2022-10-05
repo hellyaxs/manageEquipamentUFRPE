@@ -22,8 +22,8 @@ export class AluguelLaboratorioComponent implements OnInit {
     tempoDeUso: 2,
     laboratorio: this.laboratorio
   }
-  time!:string
-  date!:string
+  timeLAB!:string
+  dateLAB!:string
 
   constructor(private router:Router, private aluguelLabService:AluguelLabService) { 
     this.router.events.subscribe(x=>{
@@ -45,8 +45,9 @@ export class AluguelLaboratorioComponent implements OnInit {
   alugarLab(){
     if(this.aluguel.name !='' && this.aluguel.email !=''){
     this.loadLaboratorio()
+    this.aluguel.solicitacao = new Date(this.dateLAB+" "+this.timeLAB)
     this.aluguel.laboratorio = this.laboratorio
-    this.aluguel.solicitacao = new Date(this.date+" "+this.time)
+    console.log(this.aluguel)
     this.aluguelLabService.alugarLaboratorio(this.aluguel).subscribe()
     }
 

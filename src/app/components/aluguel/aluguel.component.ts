@@ -79,6 +79,7 @@ export class AluguelComponent implements OnInit {
  
 
   ngOnInit(): void {
+    setTimeout(() => { this.ngOnInit() }, 2000)
     this.preencherCalendario();
   }
  }
