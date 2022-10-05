@@ -1,4 +1,4 @@
-import { ChangeDetectorRef } from '@angular/core';
+import { ChangeDetectorRef, OnDestroy } from '@angular/core';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -23,11 +23,11 @@ import { AluguelLabService } from 'src/app/services/aluguel-lab.service';
   styleUrls: ['./aluguel.component.css']
  
 })
-export class AluguelComponent implements OnInit {
+export class AluguelComponent implements OnInit,OnDestroy {
 
   @Input() aluguelt?: Equipamento | Laboratorio;
   
-  
+ 
   events: CalendarEvent[] = []
   viewDate: Date = new Date();
   view: CalendarView = CalendarView.Month;
@@ -36,8 +36,8 @@ export class AluguelComponent implements OnInit {
   constructor(private aluguel:AluguelEquiService,
               private aluguelLab:AluguelLabService,private router:Router)
     {
-      this.router.events.subscribe(x=>{
-       this.preencherCalendario();})
+    
+       this.preencherCalendario();
     }
 
 
@@ -59,7 +59,8 @@ export class AluguelComponent implements OnInit {
                   
           })
        })
-       console.log(this.aluguelt)
+     
+      
     }
     else if(this.aluguelt?.type === "Laboratorio")
     {
@@ -73,6 +74,7 @@ export class AluguelComponent implements OnInit {
                     }];
                   })
                })
+              
     }
     
   }
@@ -80,9 +82,15 @@ export class AluguelComponent implements OnInit {
 
   ngOnInit(): void {
     setTimeout(() => { this.ngOnInit() }, 2000)
-    this.preencherCalendario();
+    this.events = []
+    this.preencherCalendario()
+   
+  }
+  ngOnDestroy(): void{
+    
   }
  }
+
  
 
 
