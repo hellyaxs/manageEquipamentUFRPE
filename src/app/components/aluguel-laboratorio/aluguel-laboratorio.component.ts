@@ -53,5 +53,7 @@ export class AluguelLaboratorioComponent implements OnInit {
 
   }
 
-
+  scroll(el: HTMLElement) {
+    el.scrollIntoView();
+  }
 }

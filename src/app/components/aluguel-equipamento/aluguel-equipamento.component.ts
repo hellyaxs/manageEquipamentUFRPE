@@ -52,7 +52,10 @@ export class AluguelEquipamentoComponent implements OnInit {
       this.aluguelService.alugarEquipamneto(this.aluguel).subscribe();
     }
     
+  }
 
+  scroll(el: HTMLElement) {
+    el.scrollIntoView();
   }
 
 }
