@@ -3,23 +3,54 @@
       <h1 class="text-center text-capitalize">{{laboratorio.identificacao}}</h1>
       <div class="container">
         <div class="row">
-          <div class="col-6">
-              <img src="../../../assets/img/laboratorio.jpg" alt="">
+          <div class="col-6 text-center" >
+              <img src="../../../assets/img/laboratorio.jpg" alt="" style="width: 300px; height: 300px;">
           </div>
-          <div class="col-6">
+          <div class="col-6 text-capitalize lead">
+            <p></p>
+            <p></p>
             <p>Identificação: {{laboratorio.identificacao}}</p>
             <p>Capacidade: {{laboratorio.capacidade}} alunos</p>
             <p>Localização: {{laboratorio.localizacao}}</p>
             <p>Advertências de uso: {{laboratorio.descricao}}</p>
           </div>
         </div>
+        <form>
+          <div class="row my-4">
+            <div class="form-floating m-auto" style="max-width: 700px;">
+              <input type="text" class="form-control" placeholder="digite seu nome" id="nome">
+              <label for="nome"> Nome Completo</label>
+            </div>
+            <div class="form-floating mt-4 m-auto" style="max-width: 700px;"> 
+              <input type="email" class="form-control" placeholder="digite seu email" id="email">
+              <label for="email"> Email</label>
+            </div>
+          </div>
+          <div class="row my-4">
+            <select class="custom-select custom-select-lg m-auto p-1" style="max-width: 676px; "  >
+              <option selected>Selecione o intervalo de tempo</option>
+              <option value="1">8:00 as 10:00</option>
+              <option value="2">10:00 as 12:00</option>
+              <option value="3">14:00 as 16:00</option>
+              <option value="4">16:00 as 18:00</option>
+            </select>
+          </div> 
+          <div class="row">
+            <div class="col-12 text-center">
+              <label for="data_aluguel" class="p-3 lead">Informe a data: </label>
+              <input type="date" id="data" name="data">
+            </div> 
+          </div>
+          <div class="row">
+            <a class="btn btn-lg btn-primary m-auto mt-3" style="max-width: 300px;" href="../../components/navbar/" role="button">Alugar Laboratorio »</a>
+          </div>
+        </form>
+          
       </div>
-      <p class="lead">Este exemplo é um rápido exercício para ilustrar como a navbar (na parte inferior) funciona.</p>
-      <a class="btn btn-lg btn-primary" href="../../components/navbar/" role="button">Veja a documentação »</a> 
     </div>
   </div>
 
-  <div class="container" >
+  <div class="container "  style="margin-top: 50px;" >
     <app-aluguel [aluguelt]="laboratorio" style="width: 600px; height: 600px;"></app-aluguel>
   </div>
   
