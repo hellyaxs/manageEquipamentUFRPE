@@ -5,7 +5,7 @@ import {
   OnInit,
   ViewEncapsulation, Input
 } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { CalendarView, CalendarEvent } from 'angular-calendar';
 import { CalendarEventActionsComponent } from 'angular-calendar/modules/common/calendar-event-actions.component';
 import { startOfDay } from 'date-fns';
@@ -34,9 +34,10 @@ export class AluguelComponent implements OnInit {
   CalendarView = CalendarView;
 
   constructor(private aluguel:AluguelEquiService,
-              private aluguelLab:AluguelLabService,private router:ActivatedRoute)
+              private aluguelLab:AluguelLabService,private router:Router)
     {
-       this.preencherCalendario();
+      this.router.events.subscribe(x=>{
+       this.preencherCalendario();})
     }
 
 

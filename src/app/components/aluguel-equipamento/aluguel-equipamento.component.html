@@ -20,31 +20,31 @@
         <form>
           <div class="row my-4">
             <div class="form-floating m-auto" style="max-width: 700px;">
-              <input type="text" class="form-control" placeholder="digite seu nome" id="nome">
+              <input type="text" class="form-control" [(ngModel)]="aluguel.name" name="aluguel.name" placeholder="digite seu nome" id="nome" required>
               <label for="nome"> Nome Completo</label>
             </div>
             <div class="form-floating mt-4 m-auto" style="max-width: 700px;"> 
-              <input type="email" class="form-control" placeholder="digite seu email" id="email">
-              <label for="email"> Email</label>
+              <input type="email" class="form-control" [(ngModel)]="aluguel.email" name="aluguel.email" placeholder="digite seu email" id="email" required>
+              <label for="email">Email</label>
             </div>
           </div>
           <div class="row my-4">
-            <select class="custom-select custom-select-lg m-auto p-1" style="max-width: 676px; "  >
+            <select class="custom-select custom-select-lg m-auto p-1" [(ngModel)]="time" name="time" style="max-width: 676px; "  required>
               <option selected>Selecione o intervalo de tempo</option>
-              <option value="1">8:00 as 10:00</option>
-              <option value="2">10:00 as 12:00</option>
-              <option value="3">14:00 as 16:00</option>
-              <option value="4">16:00 as 18:00</option>
+              <option value="08:00:00">8:00 as 10:00</option>
+              <option value="10:00:00">10:00 as 12:00</option>
+              <option value="14:00:00">14:00 as 16:00</option>
+              <option value="16:00:00">16:00 as 18:00</option>
             </select>
           </div> 
           <div class="row">
             <div class="col-12 text-center">
-              <label for="data_aluguel" class="p-3 lead">Informe a data: </label>
-              <input type="date" id="data" name="data">
+              <label for="data_aluguel" class="p-3 lead" >Informe a data: </label>
+              <input type="date" id="data" name="data" [(ngModel)]="date" name="date" required>
             </div> 
           </div>
           <div class="row">
-            <a class="btn btn-lg btn-primary m-auto mt-3" style="max-width: 300px;" href="../../components/navbar/" role="button">Alugar Equipamento »</a>
+            <a class="btn btn-lg btn-primary m-auto mt-3" style="max-width: 300px;" (click)="alugarEqui()" role="button">Alugar Equipamento »</a>
           </div>
         </form>
       </div>
@@ -52,6 +52,6 @@
 </div>
 
 
-<div class="container" style="margin-top: 50px;">
+<div class="container" style="margin-top: 60px;">
   <app-aluguel [aluguelt]="equipamento" style="width: 300px; height: 300px;"></app-aluguel>
 </div>
