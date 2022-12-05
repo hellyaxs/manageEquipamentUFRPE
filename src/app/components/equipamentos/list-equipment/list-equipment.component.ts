@@ -1,8 +1,9 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 
 import { Equipamento } from 'src/app/interfaces/equipamento';
-import { EquipamentoService } from 'src/app/services/equipamento.service';
+import { EquipamentoService } from 'src/app/components/equipamentos/services/equipamento.service';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-list-equipment',
@@ -11,32 +12,21 @@ import { Router } from '@angular/router';
 })
 export class ListEquipmentComponent implements OnInit {
 
-  equipamentos: Array<Equipamento> = [];
+  $equipamentos!: Observable<Equipamento[]>;
 
-  constructor(private EquipamentoService: EquipamentoService, private router: Router) { 
-    this.router.events.subscribe(x=>{
-      this.getEquipamento();
-    });
+  constructor(private EquipamentoService: EquipamentoService, private router: Router) {
+    this.$equipamentos = this.EquipamentoService.getEquipamento() // assim o reponsavel polo unsubscribe e o angalar
    }
 
   ngOnInit(): void {
-    this.getEquipamento(); 
+
   }
-
- 
-
-  getEquipamento():void { 
-    this.EquipamentoService.getEquipamento().subscribe(response => { 
-      this.equipamentos = response; 
-    })
-  }
-
 
   visualizarEquipamento(equipamento: Equipamento):void{
     this.router.navigateByUrl(`/aluguelEquipamento/${equipamento.id}`,  { state: equipamento});
   }
 
-  editEquipamento(equipamento: Equipamento): void { 
+  editEquipamento(equipamento: Equipamento): void {
     this.router.navigate(["/cadastroEquipamento"], { state: equipamento})
   }
 

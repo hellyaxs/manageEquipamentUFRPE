@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Equipamento } from 'src/app/interfaces/equipamento';
 import { Router } from '@angular/router';
-import { EquipamentoService } from 'src/app/services/equipamento.service';
-import { LaboratorioService } from 'src/app/services/laboratorio.service';
+import { take } from 'rxjs/operators';
+import { EquipamentoService } from 'src/app/components/equipamentos/services/equipamento.service';
+
 import { AluguelEqui } from 'src/app/interfaces/aluguel-equi';
-import { AluguelEquiService } from 'src/app/services/aluguel-equi.service';
+import { AluguelEquiService } from 'src/app/components/equipamentos/services/aluguel-equi.service';
+import { AluguelComponent } from '../../aluguel/aluguel.component';
 
 @Component({
   selector: 'app-aluguel-equipamento',
@@ -26,6 +28,9 @@ export class AluguelEquipamentoComponent implements OnInit {
   time!:string
   date!:string
 
+  @ViewChild(AluguelComponent,{static: false }) cal!: AluguelComponent;
+
+
   constructor(private router:Router,private aluguelService:AluguelEquiService ) {
     this.router.events.subscribe(x=>{
       this.loadEquipamento()
@@ -42,16 +47,18 @@ export class AluguelEquipamentoComponent implements OnInit {
       this.equipamento.type = "Equipamento"
     }
   }
-  
+
   alugarEqui():void{
     if(this.aluguel.name !='' && this.aluguel.email !=''){
       this.loadEquipamento()
       this.aluguel.solicitacao = new Date(this.date+" "+this.time);
       this.aluguel.equipamento = this.equipamento
-      console.log(this.equipamento)
-      this.aluguelService.alugarEquipamneto(this.aluguel).subscribe();
+      this.aluguelService.alugarEquipamneto(this.aluguel).pipe(take(1)).subscribe();
+      this.cal.events = []
+      this.cal.preencherCalendario();
+      console.log(this.cal.aluguelt)
     }
-    
+
   }
 
   scroll(el: HTMLElement) {

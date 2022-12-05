@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AluguelLab } from 'src/app/interfaces/aluguel-lab';
 import { Laboratorio } from 'src/app/interfaces/laboratorio';
-import { AluguelLabService } from 'src/app/services/aluguel-lab.service';
-import { LaboratorioService } from 'src/app/services/laboratorio.service';
+import { AluguelLabService } from 'src/app/components/laboratorio/services/aluguel-lab.service';
+import { LaboratorioService } from 'src/app/components/laboratorio/services/laboratorio.service';
 
 
 @Component({
@@ -25,7 +25,7 @@ export class AluguelLaboratorioComponent implements OnInit {
   timeLAB!:string
   dateLAB!:string
 
-  constructor(private router:Router, private aluguelLabService:AluguelLabService) { 
+  constructor(private router:Router, private aluguelLabService:AluguelLabService) {
     this.router.events.subscribe(x=>{
       this.loadLaboratorio();
     });
@@ -34,7 +34,7 @@ export class AluguelLaboratorioComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  loadLaboratorio():void { 
+  loadLaboratorio():void {
     const navigation = this.router.getCurrentNavigation()
     if(navigation?.extras.state !=null&&navigation?.extras.state != undefined){
       this.laboratorio = navigation?.extras.state as Laboratorio

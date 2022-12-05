@@ -2,7 +2,7 @@
     <div class="card-body">
         <div class="row mb-4">
             <div class="col-9">
-                <h1 class="card-title text-center">Laboratorios</h1>
+                <h1 class="card-title text-center">Equipamentos</h1>
             </div>
             <div class="col-3">
                     <div class="btn-group mr-3" role="group" aria-label="">
@@ -19,25 +19,28 @@
         <table class="table table-striped table-hover">
             <thead class="table-light">
                 <tr class="text-center">
-                    <th>Identificação</th>
-                    <th>Localização</th>
-                    <th>Capacidade</th>
-                    <th>Descrição</th>
+                    <th>identificacão</th>
+                    <th>marca</th>
+                    <th>modelo</th>
+                    <th>codigo</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let laboratorio of laboratorios" class="text-center text-uppercase cursor" (click)="visualizarLaboratorio(laboratorio)">
-                    <td>{{laboratorio.identificacao}}</td>
-                    <td>{{laboratorio.localizacao}}</td>
-                    <td>{{laboratorio.capacidade}}</td>
-                    <td>{{laboratorio.descricao}}</td> 
+                <tr *ngFor="let equipamento of $equipamentos | async" class="text-center text-uppercase cursor" (click)="visualizarEquipamento(equipamento)">
+                    <td>{{equipamento.identificacao}}</td>
+                    <td>{{equipamento.marca}}</td>
+                    <td>{{equipamento.modelo}}</td>
+                    <td>{{equipamento.codigo}}</td> 
                     <td>
-                        <a type="button" (click)="editLaboratorio(laboratorio)">
-                            <img src="../../../assets/img/icon-caneta.png" alt="icone caneta" class="mr-2"  >
+                        <a type="button" (click)="editEquipamento(equipamento)">
+                            <img src="../../../assets/img/icon-caneta.png" alt="icone caneta" class="mr-2" >
                         </a>
-                        <a >
+                        <a href="">
                             <img src="../../../assets/img/icon-excluir.png" alt="icone lixeira" >  
                         </a>
+                    </td>
+                    <td>
+                        <img src="" alt="" ngif="">
                     </td>
                 </tr>
             </tbody>

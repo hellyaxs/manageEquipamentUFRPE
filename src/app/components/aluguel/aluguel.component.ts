@@ -13,21 +13,21 @@ import { AluguelEqui } from 'src/app/interfaces/aluguel-equi';
 import { AluguelLab } from 'src/app/interfaces/aluguel-lab';
 import { Equipamento } from 'src/app/interfaces/equipamento';
 import { Laboratorio } from 'src/app/interfaces/laboratorio';
-import { AluguelEquiService } from 'src/app/services/aluguel-equi.service';
-import { AluguelLabService } from 'src/app/services/aluguel-lab.service';
+import { AluguelEquiService } from 'src/app/components/equipamentos/services/aluguel-equi.service';
+import { AluguelLabService } from 'src/app/components/laboratorio/services/aluguel-lab.service';
 
 
 @Component({
   selector: 'app-aluguel',
   templateUrl: './aluguel.component.html',
   styleUrls: ['./aluguel.component.css']
- 
+
 })
 export class AluguelComponent implements OnInit,OnDestroy {
 
   @Input() aluguelt?: Equipamento | Laboratorio;
-  
- 
+
+
   events: CalendarEvent[] = []
   viewDate: Date = new Date();
   view: CalendarView = CalendarView.Month;
@@ -36,7 +36,7 @@ export class AluguelComponent implements OnInit,OnDestroy {
   constructor(private aluguel:AluguelEquiService,
               private aluguelLab:AluguelLabService,private router:Router)
     {
-    
+
        this.preencherCalendario();
     }
 
@@ -56,15 +56,15 @@ export class AluguelComponent implements OnInit,OnDestroy {
                     title: element.name,
                     start: new Date(element.solicitacao)
                   }];
-                  
+
           })
        })
-     
-      
+
+
     }
     else if(this.aluguelt?.type === "Laboratorio")
     {
-      this.aluguelLab.getHorariosOcupados(this.aluguelt?.id)
+     this.aluguelLab.getHorariosOcupados(this.aluguelt?.id)
        .subscribe(t=>{
             t.forEach(element=>{
               this.events = [...this.events,
@@ -74,24 +74,24 @@ export class AluguelComponent implements OnInit,OnDestroy {
                     }];
                   })
                })
-              
+
     }
-    
+
   }
- 
+
 
   ngOnInit(): void {
-    setTimeout(() => { this.ngOnInit() }, 2000)
+   // setTimeout(() => { this.ngOnInit() }, 2000)
     this.events = []
     this.preencherCalendario()
-   
+
   }
   ngOnDestroy(): void{
-    
+
   }
  }
 
- 
+
 
 
 
@@ -102,9 +102,9 @@ export class AluguelComponent implements OnInit,OnDestroy {
 // })
 // export class AluguelComponent implements {
 
-//   equipamento!: Equipamento 
+//   equipamento!: Equipamento
 //   laboratorio!: Laboratorio
-//   equipamento_upado!: boolean  
+//   equipamento_upado!: boolean
 //   laboratorio_upado!: boolean
 
 //   // constructor(private router:Router, private equipamentoService:EquipamentoService, private laboratorioService: LaboratorioService ) {
@@ -114,7 +114,7 @@ export class AluguelComponent implements OnInit,OnDestroy {
 //   //   });
 //   //  }
 
- 
+
 
 //   loadEquipamento():void{
 //     const navigation = this.router.getCurrentNavigation()
@@ -123,7 +123,7 @@ export class AluguelComponent implements OnInit,OnDestroy {
 //     }
 //   }
 
-//   loadLaboratorio():void { 
+//   loadLaboratorio():void {
 //     const navigation = this.router.getCurrentNavigation()
 //     if(navigation?.extras.state !=null&&navigation?.extras.state != undefined){
 //       this.laboratorio = navigation?.extras.state as Laboratorio
@@ -273,9 +273,9 @@ export class AluguelComponent implements OnInit,OnDestroy {
 //   closeOpenMonthViewDay() {
 //     this.activeDayIsOpen = false;
 //   }
-  
-  
- 
+
+
+
 
 //   //  calendarOptions: CalendarOptions = {
 //   //   headerToolbar: {
@@ -286,7 +286,7 @@ export class AluguelComponent implements OnInit,OnDestroy {
 //   //   initialView: 'dayGridMonth',
 //   //   eventColor: '#F4C584',
 //   //   navLinks: false,
-    
+
 //   //    themeSystem: 'bootstrap5',
 //   //   // dateClick: this.handleDateClick.bind(this), // bind is important!
 //   //   events: [

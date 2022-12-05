@@ -1,7 +1,8 @@
-import { Component, OnChanges, OnInit } from '@angular/core';
+import { Component, OnChanges, OnDestroy, OnInit } from '@angular/core';
 import { Laboratorio } from 'src/app/interfaces/laboratorio';
-import { LaboratorioService } from 'src/app/services/laboratorio.service';
+import { LaboratorioService } from 'src/app/components/laboratorio/services/laboratorio.service';
 import { Route, Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-list-laboratorios',
@@ -10,30 +11,24 @@ import { Route, Router } from '@angular/router';
 })
 export class ListLaboratoriosComponent implements OnInit {
 
-  laboratorios: Array<Laboratorio> = [];
+  laboratorios!: Observable<Laboratorio[]>;
   constructor(private EquipamentoService: LaboratorioService, private route: Router) {
-    this.route.events.subscribe(x=>{
-      this.getLaboratorio();
-    });
+    this.laboratorios = this.EquipamentoService.getLaboratorio()
    }
 
   ngOnInit(): void {
-     this.getLaboratorio()
+
   }
 
-
-
-  getLaboratorio():void { 
-    this.EquipamentoService.getLaboratorio().subscribe(response => { 
-      this.laboratorios = response; 
-    })
+  getLaboratorio():void {
+    this.laboratorios = this.EquipamentoService.getLaboratorio()
   }
 
   visualizarLaboratorio(lab:Laboratorio):void{
     this.route.navigateByUrl(`/aluguelLaboratorio/${lab.id}`, {state:lab});
   }
 
-  editLaboratorio(lab:Laboratorio): void { 
+  editLaboratorio(lab:Laboratorio): void {
     this.route.navigate(["/cadastroLaboratorio"],{state:lab})
   }
 }
