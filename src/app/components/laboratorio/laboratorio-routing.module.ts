@@ -7,7 +7,8 @@ import { AluguelLaboratorioComponent } from './aluguel-laboratorio/aluguel-labor
 const routes: Routes = [
   {
     path: '',
-    component: ListLaboratoriosComponent
+    component: ListLaboratoriosComponent,
+  
   },
   {
     path: 'cadastroLaboratorio',
@@ -22,10 +23,12 @@ const routes: Routes = [
       }
     ]
   },
+
 ];
+const routesRoot:Routes=[];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forChild(routes),],
   exports: [RouterModule]
 })
 export class LaboratorioRoutingModule { }

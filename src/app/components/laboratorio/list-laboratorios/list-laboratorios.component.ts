@@ -25,10 +25,10 @@ export class ListLaboratoriosComponent implements OnInit {
   }
 
   visualizarLaboratorio(lab:Laboratorio):void{
-    this.route.navigateByUrl(`/aluguelLaboratorio/${lab.id}`, {state:lab});
+    this.route.navigateByUrl(`laboratorios/aluguelLaboratorio/${lab.id}`, {state:lab});
   }
 
   editLaboratorio(lab:Laboratorio): void {
-    this.route.navigate(["/cadastroLaboratorio"],{state:lab})
+    this.route.navigateByUrl(`laboratorios/cadastroLaboratorio/`,{state:lab})
   }
 }

@@ -5,19 +5,16 @@ import { CadastroEquipamentoComponent } from "./cadastro-equipamento/cadastro-eq
 import { ListEquipmentComponent } from "./list-equipment/list-equipment.component";
 
 const routes:Routes =[
+
   {
     path: '',
-    redirectTo:'equipamentos'
-  },
-  {
-    path: 'equipamentos',
     component: ListEquipmentComponent,
-    pathMatch: 'full'
+
   },
   {
     path: 'cadastroEquipamento',
     component: CadastroEquipamentoComponent,
-    pathMatch: 'full'
+
   },
   {
     path: 'aluguelEquipamento',
@@ -32,7 +29,7 @@ const routes:Routes =[
 ]
 
 @NgModule({
-  imports:[RouterModule.forRoot(routes)],
+  imports:[RouterModule.forChild(routes)],
   exports:[RouterModule]
 
 })
